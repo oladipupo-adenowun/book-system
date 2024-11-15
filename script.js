@@ -19,7 +19,7 @@ function addBook(){
     }else{
         alert('Please fill all fields correctly!');
     }
-
+}
     function showBooks(){
         const booksHTML = books.map(
             (book,index) => `
@@ -39,4 +39,8 @@ function addBook(){
         document.getElementById('bookDescription').value = '';
         document.getElementById('pagesNumber').value = '';
     }
-}
+
+    function deleteBook(bookId){
+        books.splice(bookId-1,1);
+        showBooks();
+    }
